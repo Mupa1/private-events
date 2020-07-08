@@ -10,4 +10,5 @@ class User < ApplicationRecord
   def previous_events
     events.where('date <=?', DateTime.now)
   end
+
 end

@@ -2,7 +2,7 @@
   <%= @user.username%><br/>
   <%= @user.email%>
 </p>
-
+<h2>List of Upcoming Events</h2>
 <div>
   <% @upcoming_events.each do |event| %>
 
@@ -24,6 +24,7 @@
   <% end %>
 </div>
 
+<h2>List of Past Events</h2>
 <div>
   <% @previous_events.each do |event| %>
 

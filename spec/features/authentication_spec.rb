@@ -17,7 +17,7 @@ RSpec.feature 'Authentications', type: :feature do
   it 'Should Signin' do
     visit login_path
     fill_in 'session[email]', with: 'user@mail.com'
-    click_button 'Sign In'
+    click_button 'Log in'
     expect(page).to have_content('List of Upcoming Events')
     expect(page).to have_content('List of Past Events')
     expect(page).to have_content('Log Out')
@@ -26,7 +26,7 @@ RSpec.feature 'Authentications', type: :feature do
   it 'Should Signout' do
     visit login_path
     fill_in 'session[email]', with: 'user@mail.com'
-    click_button 'Sign In'
+    click_button 'Log in'
     click_on 'Log Out'
     expect(page).to have_content('Email')
     expect(page).to have_content('Log in')
