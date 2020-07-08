@@ -10,5 +10,4 @@ class Event < ApplicationRecord
   def self.previous
     Event.previous_scope
   end
-
 end
