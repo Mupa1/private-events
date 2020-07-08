@@ -8,7 +8,7 @@ RSpec.feature 'Authentications', type: :feature do
   it 'Should Signup' do
     visit new_user_path
     fill_in 'user[email]', with: 'newUser@mail.com'
-    fill_in 'user[name]', with: 'User'
+    fill_in 'user[username]', with: 'User'
     click_button 'Create User'
     expect(page).to have_content('All Events')
     expect(page).to have_content('Create Event')
