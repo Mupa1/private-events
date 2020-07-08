@@ -2,3 +2,21 @@
   <%= @user.username%><br/>
   <%= @user.email%>
 </p>
+
+<p>
+  <% @upcoming_events.each do |e| %>
+  <%= e.name%>
+  <%= e.location%>
+  <%= e.date%>
+  <%= e.description%>
+<% end %>
+</p>
+
+<p>
+  <% @previous_events.each do |e| %>
+  <%= e.name%>
+  <%= e.location%>
+  <%= e.date%>
+  <%= e.description%>
+<% end %>
+</p>
