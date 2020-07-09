@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :attended_events, through: :event_attendees, source: :attended_event
 
   validates :username, presence: true, length: { in: 3..20 },
-                   uniqueness: true
+                       uniqueness: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i.freeze
   validates :email, presence: true, length: { maximum: 244 },
                     format: { with: VALID_EMAIL_REGEX },
