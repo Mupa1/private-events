@@ -3,6 +3,13 @@ class User < ApplicationRecord
   has_many :event_attendees, foreign_key: :attendee_id
   has_many :attended_events, through: :event_attendees, source: :attended_event
 
+  validates :username, presence: true, length: { in: 3..20 },
+                   uniqueness: true
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i.freeze
+  validates :email, presence: true, length: { maximum: 244 },
+                    format: { with: VALID_EMAIL_REGEX },
+                    uniqueness: true
+
   def upcoming_events
     events.where('date >=?', DateTime.now)
   end

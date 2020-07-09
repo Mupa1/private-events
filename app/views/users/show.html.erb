@@ -1,7 +1,9 @@
-<p>
-  <%= @user.username%><br/>
-  <%= @user.email%>
-</p>
+<p id="notice"><%= notice %></p>
+
+<h2>
+  'Welcome, User'
+</h2>
+
 <h2>List of Upcoming Events</h2>
 <div>
   <% @upcoming_events.each do |event| %>

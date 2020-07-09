@@ -1,21 +1,23 @@
 class SessionsController < ApplicationController
+  
   def new; end
 
   def create
-    user = User.find_by(email: params[:session][:email].downcase)
+    user = User.find_by(email: params[:session][:email])
+
     if user
-      session[:user_id] = user.id
-      flash[:notice] = 'You have successfully logged in'
+      log_in user
+      flash[:notice] = 'Login successfully'
       redirect_to user_path(user)
     else
-      flash.now[:alert] = 'There was something wrong with your login information'
+      flash.now[:notice] = 'Email does not exist'
       render 'new'
     end
   end
 
   def destroy
-    session[:user_id] = nil
-    flash[:notice] = 'You have logged out'
+    log_out
     redirect_to login_path
   end
+
 end
