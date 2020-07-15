@@ -10,6 +10,12 @@
   </head>
 
   <body>
+  <%= flash[:alert] %>
+  <%= flash[:notice] %>
+
+    <%= render 'layouts/navigation' %>
+    <div class="container">
     <%= yield %>
+    </div>
   </body>
 </html>
